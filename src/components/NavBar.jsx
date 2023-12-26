@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Grid, Typography } from '@mui/material';
-import { SportsEsports } from '@mui/icons-material';
+import { LineAxis, SportsEsports } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -18,48 +19,59 @@ const NavBar = () => {
   };
 
   return (
-    
-    <Grid container direction="row" justifyContent="space-between" alignItems="center">
-        <Grid item xs={4} sx={{color: 'white'}}>
-            <Typography variant='h2'>Gaming<SportsEsports/>Store</Typography>
-        </Grid>
+    <>
+        <Grid container direction="row" justifyContent="space-between" alignItems="center">
+            <Grid item xs={4} sx={{color: 'white'}}>
+            <Link to={'/'} >
+                <Typography variant='h2'>Gaming<SportsEsports/>Store</Typography>
+            </Link>
+            </Grid>
 
-        {/* menu */}
-        <Grid  item xs={4}>
+            {/* menu */}
+            <Grid  item xs={4}>
 
-            <Button
-                sx={{color: '#403E45'}}
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-                >
-                Juegos
-            </Button>
-                <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button',
-                    }}
+                <Button
+                    sx={{color: '#E0D82B'}}
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
                     >
-                    <MenuItem onClick={handleClose}>Accion</MenuItem>
-                    <MenuItem onClick={handleClose}>Terror</MenuItem>
-                    <MenuItem onClick={handleClose}>Aventura</MenuItem>
-                </Menu>
-            <Button variant="text" sx={{color: '#AD8CE6'}}>Novedades</Button>
-            <Button variant="text" sx={{color: '#AD8CE6'}}>Ofertas</Button>
-        </Grid>
+                    Categorias
+                </Button>
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                        >
+                        <Link to={'/categoria/accion'}>
+                            <MenuItem onClick={handleClose}>Accion</MenuItem>
+                        </Link>
+                        <Link to={'/categoria/aventura'}>
+                        <MenuItem onClick={handleClose}>Aventura</MenuItem>
+                        </Link>
+                        <Link to={'/categoria/terror'}>
+                        <MenuItem onClick={handleClose}>Terror</MenuItem>
+                        </Link>
+                    </Menu>
+                <Link to={'/novedades'} >
+                <Button variant="text" sx={{color: '#AD8CE6'}}>Novedades</Button>
+                </Link>
+                <Button variant="text" sx={{color: '#AD8CE6'}}>Ofertas</Button>
+            </Grid>
 
-        {/* carrito */}
-        <Grid item xs={1}>
-            <CartWidget/>
+            {/* carrito */}
+            <Grid item xs={1}>
+                <CartWidget/>
+            </Grid>
         </Grid>
-    </Grid>
-    
+        
+    </>
   )
 }
 
