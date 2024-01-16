@@ -1,25 +1,20 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { useState } from 'react';
 
-const ItemCount = () => {
-    const [contador, setContador] = useState(0)
 
-    const resta = ()=>{
-        if (contador > 0){
-            setContador(contador - 1)
-        }
-    }
+const ItemCount = ({contador, sumar, resta, agregar}) => {
 
+  
+    
   return (
     <Stack direction="row" spacing={2} >
       <Button variant="contained"onClick={resta}>-</Button>
       <Button variant="contained" disabled>
         {contador}
       </Button>
-      <Button variant="contained"onClick={()=> setContador(contador + 1)}>+</Button>
-      <Button variant="contained"color="success">
+      <Button variant="contained"onClick={sumar}>+</Button>
+      <Button variant="contained"color="success" onClick={agregar}>
         Agregar al carrito
       </Button>
     </Stack>

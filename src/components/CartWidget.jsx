@@ -1,12 +1,21 @@
 import { ShoppingCartOutlined } from '@mui/icons-material'
 import { Button, colors } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../contex/cartContext'
 
 
 const CartWidget = () => {
+
+  const {cantidadEnCarrito}= useContext(CartContext)
   return (
     <>
-        <Button variant="contained" color="error">{<ShoppingCartOutlined/>}</Button>
+      <Link to={'/carrito'}><Button variant="contained" color="error">{<ShoppingCartOutlined/>}
+      <span>{cantidadEnCarrito()}</span>
+      </Button>
+      
+      </Link>
+        
     </>
   )
 }
