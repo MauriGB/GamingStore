@@ -59,10 +59,14 @@ const NavBar = () => {
                         <MenuItem onClick={handleClose}>Terror</MenuItem>
                         </Link>
                     </Menu>
+                    
                 <Link to={'/novedades'} >
                 <Button variant="text" sx={{color: '#AD8CE6'}}>Novedades</Button>
                 </Link>
+
+                <Link to={"/ofertas"}>
                 <Button variant="text" sx={{color: '#AD8CE6'}}>Ofertas</Button>
+                </Link>
             </Grid>
 
             {/* carrito */}

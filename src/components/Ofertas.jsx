@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Novedades = () => {
+const Ofertas = () => {
   return (
     <div>EN CONSTRUCCION!</div>
   )
 }
 
-export default Novedades
+export default Ofertas

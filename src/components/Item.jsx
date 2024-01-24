@@ -14,6 +14,7 @@ const Item = ({titulo, id, img}) => {
 
       <Card sx={{ m: 1, minWidth: 200 }}>
         <CardActionArea>
+          <Link to={`../producto/${id}`}>
           <CardMedia
             component="img"
             height="140"
@@ -25,6 +26,7 @@ const Item = ({titulo, id, img}) => {
               {titulo}
             </Typography>
           </CardContent>
+          </Link>
         </CardActionArea>
         <CardActions>
           <Link to={`../producto/${id}`}>

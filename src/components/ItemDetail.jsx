@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Stack } from '@mui/material';
 import ItemCount from './itemCount';
-import { CartContext } from '../contex/cartContext';
+import { CartContext } from '../contex/CartContext';
 
 
 
