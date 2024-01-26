@@ -27,7 +27,9 @@ const ItemDetail = ({producto}) => {
     
 
   return (
-    <Stack alignItems="center" justifyContent="center" >
+    <Stack alignItems="center"
+     justifyContent="center"
+     marginTop={10} >
 
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
@@ -35,7 +37,7 @@ const ItemDetail = ({producto}) => {
             component="img"
             height="140"
             image={producto.imagen}
-            alt="green iguana"
+            alt={producto.titulo}
             />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
